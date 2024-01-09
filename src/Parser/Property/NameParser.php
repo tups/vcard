@@ -13,13 +13,13 @@ final class NameParser extends PropertyParser implements NodeParserInterface
     {
         @list($lastName, $firstName, $additional, $prefix, $suffix) = explode(';', $value);
 
-        $this->convertEmptyStringToNull([
+        $this->convertEmptyStringToNull(
             $lastName,
             $firstName,
             $additional,
             $prefix,
             $suffix
-        ]);
+        );
 
         return new Name($lastName, $firstName, $additional, $prefix, $suffix);
     }
